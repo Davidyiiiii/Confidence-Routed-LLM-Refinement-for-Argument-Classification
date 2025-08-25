@@ -17,7 +17,7 @@ N_PER_BIN = int(os.getenv("N_PER_BIN",3 ))
 SLEEP    = float(os.getenv("SLEEP", "0.6"))
 
 # OpenAI
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-o3")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "o3")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # DeepSeek
@@ -158,4 +158,5 @@ def main():
     df.to_csv(CSV_OUT, index=False, encoding="utf-8")
     tqdm.write(f"Save → {CSV_OUT}")
 if __name__ == "__main__":
+
     main()
