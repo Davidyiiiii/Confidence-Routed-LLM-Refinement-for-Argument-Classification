@@ -35,7 +35,7 @@ conf   = torch.softmax(torch.tensor(logits), -1).max(-1).values.numpy()
 pred   = np.argmax(logits, axis=-1)
 gold   = test_ds["label"]
 
-# 3️⃣  读原始 test CSV 以取 essay_id / discourse_text
+#  essay_id / discourse_text
 raw = pd.read_csv(RAW_TEST, low_memory=False)
 raw = raw[raw.discourse_type != "Unannotated"].reset_index(drop=True)
 
@@ -56,3 +56,4 @@ df_out = pd.DataFrame({
 
 df_out.to_csv(OUT_CSV, index=False, encoding="utf-8")
 print("Save in", OUT_CSV)
+
